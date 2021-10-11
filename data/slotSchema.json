@@ -1,0 +1,76 @@
+{
+  "Schema": [
+    {
+      "id": 0,
+      "title": "seven",
+      "amount": {
+        "firstSlot": 1,
+        "secondSlot": 1,
+        "thirdSlot": 1
+      }
+    },
+    {
+      "id": 1,
+      "title": "bar",
+      "amount": {
+        "firstSlot": 3,
+        "secondSlot": 2,
+        "thirdSlot": 1
+      }
+    },
+    {
+      "id": 2,
+      "title": "watermelon",
+      "amount": {
+        "firstSlot": 2,
+        "secondSlot": 2,
+        "thirdSlot": 2
+      }
+    },
+    {
+      "id": 3,
+      "title": "bell",
+      "amount": {
+        "firstSlot": 1,
+        "secondSlot": 5,
+        "thirdSlot": 8
+      }
+    },
+    {
+      "id": 4,
+      "title": "peach",
+      "amount": {
+        "firstSlot": 7,
+        "secondSlot": 3,
+        "thirdSlot": 3
+      }
+    },
+    {
+      "id": 5,
+      "title": "mandarin",
+      "amount": {
+        "firstSlot": 5,
+        "secondSlot": 5,
+        "thirdSlot": 4
+      }
+    },
+    {
+      "id": 6,
+      "title": "cherry",
+      "amount": {
+        "firstSlot": 2,
+        "secondSlot": 6,
+        "thirdSlot": 0
+      }
+    },
+    {
+      "id": 7,
+      "title": "lemon",
+      "amount": {
+        "firstSlot": 0,
+        "secondSlot": 0,
+        "thirdSlot": 4
+      }
+    }
+  ]
+}

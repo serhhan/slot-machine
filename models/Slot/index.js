@@ -12,7 +12,6 @@ class Slot {
     let tempSlot = [[], [], []];
     for (let i = 0; i < data.length; i++) {
       const selectedData = data[i];
-      console.log(selectedData.amount);
       addAsRepeated(
         tempSlot[0],
         selectedData.id,
@@ -28,8 +27,8 @@ class Slot {
         selectedData.id,
         selectedData.amount.thirdSlot
       );
+      console.log(tempSlot);
     }
-    console.log(tempSlot);
   }
 }
 

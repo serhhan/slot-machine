@@ -12,7 +12,7 @@ const selectWinnerSlots = (
     defaultSlotArray[iteration][winnerOrder + 1] >=
     !defaultSlotArray[iteration][defaultSlotArray[iteration].length]
       ? defaultSlotArray[iteration][winnerOrder + 1]
-      : defaultSlotArray[iteration][0],
-  ]);
+      : defaultSlotArray[iteration][0]
+  ])
 
-module.exports = selectWinnerSlots;
+module.exports = selectWinnerSlots

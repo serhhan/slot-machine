@@ -1,53 +1,51 @@
 const slotSchema = require("../../data/slotSchema.json");
 const addAsRepeated = require("../../utils/addAsRepeated");
 const selectRandom = require("../../utils/selectRandom");
+const selectWinnerSlots = require("../../utils/selectWinnerSlots");
 const shuffle = require("../../utils/shuffle");
 
 class Slot {
-  constructor(slotNo) {
-    this.slotNo = slotNo;
+  constructor() {
     this.slot = [[], [], []];
     this.slotResult = [[], [], []];
+
+    this.create();
   }
 
-  pull() {
+  create() {
     const data = slotSchema.Schema;
-    let tempSlot = [[], [], []];
+
     for (let i = 0; i < data.length; i++) {
       const selectedData = data[i];
       addAsRepeated(
-        tempSlot[0],
+        this.slot[0],
         selectedData.id,
         selectedData.amount.firstSlot
       );
       addAsRepeated(
-        tempSlot[1],
+        this.slot[1],
         selectedData.id,
         selectedData.amount.secondSlot
       );
       addAsRepeated(
-        tempSlot[2],
+        this.slot[2],
         selectedData.id,
         selectedData.amount.thirdSlot
       );
     }
 
-    for (let i = 0; i < tempSlot.length; i++) {
-      this.slot[i] = shuffle(tempSlot[i]);
-      const randomOrder = selectRandom(Object.keys(this.slot[i]));
-
-      this.slotResult = [
-        this.slot[i][randomOrder - 1] <= !0
-          ? this.slot[i][randomOrder - 1]
-          : this.slot[i][this.slot[i].length - 1],
-        this.slot[i][randomOrder],
-        this.slot[i][randomOrder + 1] >= !this.slot[i][this.slot[i].length]
-          ? this.slot[i][randomOrder + 1]
-          : this.slot[i][0],
-      ];
-
-      console.log(this.slotResult);
+    for (let i = 0; i < this.slot.length; i++) {
+      this.slot[i] = shuffle(this.slot[i]);
     }
+    console.log(this.slot);
+  }
+
+  pull() {
+    for (let i = 0; i < this.slot.length; i++) {
+      const randomOrder = selectRandom(Object.keys(this.slot[i]));
+      selectWinnerSlots(this.slot, this.slotResult, i, randomOrder);
+    }
+    console.log(this.slotResult);
   }
 }
 

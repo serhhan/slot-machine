@@ -3,6 +3,7 @@ const addAsRepeated = require('../../utils/addAsRepeated')
 const selectRandom = require('../../utils/selectRandom')
 const selectWinnerSlots = require('../../utils/selectWinnerSlots')
 const shuffle = require('../../utils/shuffle')
+const moveArrayElements = require('../../utils/moveArrayElements')
 
 class Slot {
   constructor() {
@@ -37,14 +38,15 @@ class Slot {
     for (let i = 0; i < this.slot.length; i++) {
       this.slot[i] = shuffle(this.slot[i])
     }
-    console.log(this.slot)
   }
 
   pull() {
     for (let i = 0; i < this.slot.length; i++) {
       const randomOrder = selectRandom(Object.keys(this.slot[i]))
       selectWinnerSlots(this.slot, this.slotResult, i, randomOrder)
+      // console.log(this.slot.length)
     }
+    // console.log(this.slot)
     console.log(this.slotResult)
   }
 }

@@ -4,4 +4,4 @@ const addAsRepeated = (target, item, times) => {
   }
 }
 
-export default addAsRepeated
+module.exports = addAsRepeated

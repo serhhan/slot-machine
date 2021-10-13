@@ -6,3 +6,4 @@ const Slot = require('./models/Slot')
 // serhan.bet(20);
 // serhan.bet(20);
 const a = new Slot()
+a.pull()

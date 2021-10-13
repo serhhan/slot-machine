@@ -1,5 +1,5 @@
 const selectRandom = array => {
-  return array[Math.floor(Math.random() * array.length)]
+  return Number(array[Math.floor(Math.random() * array.length)])
 }
 
 module.exports = selectRandom

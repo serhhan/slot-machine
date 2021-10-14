@@ -45,11 +45,11 @@ class Slot {
     for (let i = 0; i < this.slot.length; i++) {
       const randomOrder = selectRandom(Object.keys(this.slot[i]))
       selectWinnerSlots(this.slot, this.slotResult, i, randomOrder)
-      // moveArrayElements(this.slot, randomOrder)
+      moveArrayElements(this.slot[i], randomOrder)
     }
-    // console.log(this.slot)
+
     console.log(this.slotResult)
-    // console.log(this.slot)
+    console.log(this.slot)
   }
 }
 

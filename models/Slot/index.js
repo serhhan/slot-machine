@@ -17,22 +17,10 @@ class Slot {
     const data = slotSchema.Schema
 
     for (let i = 0; i < data.length; i++) {
-      const selectedData = data[i]
-      addAsRepeated(
-        this.slot[0],
-        selectedData.id,
-        selectedData.amount.firstSlot
-      )
-      addAsRepeated(
-        this.slot[1],
-        selectedData.id,
-        selectedData.amount.secondSlot
-      )
-      addAsRepeated(
-        this.slot[2],
-        selectedData.id,
-        selectedData.amount.thirdSlot
-      )
+      const focusedData = data[i]
+      addAsRepeated(this.slot[0], focusedData.id, focusedData.amount.firstSlot)
+      addAsRepeated(this.slot[1], focusedData.id, focusedData.amount.secondSlot)
+      addAsRepeated(this.slot[2], focusedData.id, focusedData.amount.thirdSlot)
     }
 
     for (let i = 0; i < this.slot.length; i++) {
@@ -41,15 +29,12 @@ class Slot {
   }
 
   pull() {
-    console.log(this.slot)
     for (let i = 0; i < this.slot.length; i++) {
       const randomOrder = selectRandom(Object.keys(this.slot[i]))
       selectWinnerSlots(this.slot, this.slotResult, i, randomOrder)
       moveArrayElements(this.slot[i], randomOrder)
     }
-
     console.log(this.slotResult)
-    console.log(this.slot)
   }
 }
 

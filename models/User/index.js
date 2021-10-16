@@ -19,7 +19,7 @@ class User {
 
   bet(amount) {
     this.slot.pull()
-    calculatePrize(amount, this.balance, this.slot.slotResult)
+    calculatePrize(amount, this.balance, this.currency, this.slot.slotResult)
   }
 }
 
